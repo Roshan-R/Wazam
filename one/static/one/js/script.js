@@ -1,7 +1,10 @@
 /*
  */
 
+
 function getTrack(button) {
+    console.log("Checking for recorder..")
+
     navigator.mediaDevices.getUserMedia({ audio: true })
         .then(stream => {
             const mediaRecorder = new MediaRecorder(stream);
@@ -43,7 +46,13 @@ function getTrack(button) {
 var recording = false;
 var button = document.getElementsByClassName("recordButton")[0]
     //var result = document.getElementsByClassName("container")[0]
+var text = document.getElementsByClassName("text")[0];
+//var https = false;
 
+/*if (location.protocol !== 'https:') {
+    text.innerHTML = "<h1>Recording can be done only via https!</h1>";
+    throw new Error("http used ");
+}*/
 
 function gotSong(response) {
     button.classList.remove('recording');
@@ -53,6 +62,7 @@ function gotSong(response) {
 
     if (response.matches.length) {
         console.log("match found");
+        text.innerHTML = "<h1>Tap to Shazam!</h1>";
         console.log("Track title : " + response.track.title)
         console.log("Track artist : " + response.track.subtitle)
         console.log("Track coverart : " + response.track.images.coverart)
@@ -60,7 +70,12 @@ function gotSong(response) {
         const trackData = getTrackData(response);
         document.body.insertAdjacentHTML("afterend", trackData);
 
+        var trackDiv = document.getElementsByClassName("container")[0];
+        trackDiv.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+        //trackDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
     } else {
+        text.innerHTML = "<h1>No match found</h1>";
         console.log("No match found");
     }
 
@@ -69,10 +84,12 @@ function gotSong(response) {
 function JSmagic() {
 
     if (recording) {
+        text.innerHTML = "<h1>Tap to Shazam!</h1>";
         button.classList.remove('recording');
         console.log("removing")
         recording = false;
     } else {
+        text.innerHTML = "<h2>Looking for Matches...</h2>";
         button.classList.add('recording');
         console.log("adding")
         recording = true;

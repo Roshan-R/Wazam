@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -13,21 +13,18 @@ html {
 
 body {
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0bf), to(#066bff)) no-repeat;
   background: linear-gradient(to bottom, #0bf, #066bff) no-repeat;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .text {
@@ -44,40 +41,24 @@ body {
   }
 }
 
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.wrapper{
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media screen and (max-width: 769px) {
-  .wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 769px){
+    flex-direction: column;
   }
 }
 
 .recordButton {
   border-radius: 250px;
   -webkit-box-shadow: #00000054 5px 5px 10px;
-  box-shadow: #00000054 5px 5px 10px;
+          box-shadow: #00000054 5px 5px 10px;
   padding: 20px;
   cursor: pointer;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   margin: 10px;
 }
@@ -85,17 +66,17 @@ body {
 @media screen and (min-width: 769px) {
   .recordButton:hover {
     -webkit-box-shadow: #00000054 5px 5px 25px;
-    box-shadow: #00000054 5px 5px 25px;
+            box-shadow: #00000054 5px 5px 25px;
     -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+            transform: scale(1.2);
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
   }
   .recordButton:active {
     -webkit-box-shadow: #00000054 4px 4px 15px;
-    box-shadow: #00000054 4px 4px 15px;
+            box-shadow: #00000054 4px 4px 15px;
     -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+            transform: scale(1.1);
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
   }
@@ -104,67 +85,56 @@ body {
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 .recording {
   -webkit-transform: scale(0.9);
-  transform: scale(0.9);
+          transform: scale(0.9);
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   -webkit-animation: spin 1s infinite;
-  animation: spin 1s infinite;
+          animation: spin 1s infinite;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
 .recording:hover {
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
 }
 
 /*Card Styles*/
+
 /*Button style when card spawns*/
-@-webkit-keyframes rollaway {
-  from {
-    -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
+
+@keyframes rollaway{
+  from{
+    transform: rotate(0deg) scale(1);
   }
-  to {
-    -webkit-transform: rotate(360deg) scale(0.5);
-            transform: rotate(360deg) scale(0.5);
-  }
-}
-@keyframes rollaway {
-  from {
-    -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
-  }
-  to {
-    -webkit-transform: rotate(360deg) scale(0.5);
-            transform: rotate(360deg) scale(0.5);
+  to{
+    transform: rotate(360deg) scale(0.5);
   }
 }
 
-.rollaway {
-  -webkit-animation: rollaway 1s forwards ease;
-          animation: rollaway 1s forwards ease;
+.rollaway{
+  animation: rollaway 1s forwards ease;
 }
 
 .container {
@@ -173,44 +143,28 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 2rem 0;
 }
 
-@-webkit-keyframes cardreveal {
-  from {
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
+@keyframes cardreveal{
+  from{
+    clip-path: inset(0 100% 0 0);
     opacity: 0;
   }
-  to {
-    -webkit-clip-path: inset(0 0% 0 0);
-            clip-path: inset(0 0% 0 0);
+  to{
+    clip-path: inset(0 0% 0 0);
     opacity: 1;
   }
 }
-
-@keyframes cardreveal {
-  from {
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
-    opacity: 0;
-  }
-  to {
-    -webkit-clip-path: inset(0 0% 0 0);
-            clip-path: inset(0 0% 0 0);
-    opacity: 1;
-  }
+.cardreveal{
+  animation: cardreveal 1s forwards .5s ease;
 }
 
-.cardreveal {
-  -webkit-animation: cardreveal 1s forwards .5s ease;
-          animation: cardreveal 1s forwards .5s ease;
-}
 
 .container .card-item {
   display: -webkit-box;
@@ -219,27 +173,20 @@ body {
   font-family: 'Raleway', sans-serif;
   max-width: 80vw;
   -webkit-box-shadow: #00000010 5px 5px 10px;
-  box-shadow: #00000010 5px 5px 10px;
+          box-shadow: #00000010 5px 5px 10px;
   border-radius: 6px;
-  -webkit-transition: all .5s ease;
   transition: all .5s ease;
   cursor: pointer;
   opacity: 0;
-}
-
-@media screen and (max-width: 769px) {
-  .container .card-item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  @media screen and (max-width: 769px){
+    flex-direction: column;
   }
 }
 
 @media screen and (min-width: 769px) {
   .container .card-item:hover {
     -webkit-box-shadow: #0000007c 3px 3px 10px;
-    box-shadow: #0000007c 3px 3px 10px;
+            box-shadow: #0000007c 3px 3px 10px;
     -webkit-transition: -webkit-box-shadow .5s ease;
     transition: -webkit-box-shadow .5s ease;
     transition: box-shadow .5s ease;
@@ -247,44 +194,33 @@ body {
   }
   .container .card-item:active {
     -webkit-box-shadow: #0000007c 1px 1px 5px;
-    box-shadow: #0000007c 1px 1px 5px;
-    -webkit-transition: -webkit-box-shadow .1s ease;
-    transition: -webkit-box-shadow .1s ease;
+            box-shadow: #0000007c 1px 1px 5px;
     transition: box-shadow .1s ease;
-    transition: box-shadow .1s ease, -webkit-box-shadow .1s ease;
   }
 }
 
 .container .card-item .card-image {
   background-color: #e1aaaf;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px;
   border-radius: 8px 0 0 8px;
-}
-
-@media screen and (max-width: 769px) {
-  .container .card-item .card-image {
+  @media screen and (max-width: 769px){
     border-radius: 8px 8px 0 0;
   }
 }
 
 .container .card-item .card-image .img-responsive {
-  max-width: 60%;
+  max-width:60%;
   padding: 10px;
   -webkit-box-shadow: 2px 2px 7px #00000033;
   box-shadow: 2px 2px 7px #00000033;
-}
-
-@media screen and (max-width: 769px) {
-  .container .card-item .card-image .img-responsive {
+  @media screen and (max-width: 769px){
     max-width: 90%;
   }
 }
@@ -294,10 +230,7 @@ body {
   padding: 20px;
   border-radius: 0 8px 8px 0;
   color: #ffffff;
-}
-
-@media screen and (max-width: 769px) {
-  .container .card-item .card-info {
+  @media screen and (max-width: 769px){
     border-radius: 0 0 8px 8px;
   }
 }

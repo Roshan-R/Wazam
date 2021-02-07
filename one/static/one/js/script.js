@@ -68,7 +68,10 @@ function gotSong(response) {
         console.log("Track coverart : " + response.track.images.coverart)
 
         const trackData = getTrackData(response);
-        document.body.insertAdjacentHTML("afterend", trackData);
+        document.querySelector(".wrapper").insertAdjacentHTML("beforeend", trackData);
+        document.querySelector(".card-item").classList.add("cardreveal");
+        document.querySelector(".recordButton").classList.add("rollaway");
+        document.querySelector(".card-info").scrollIntoView();
 
         var trackDiv = document.getElementsByClassName("container")[0];
         trackDiv.lastElementChild.scrollIntoView({ behavior: 'smooth' });
@@ -97,6 +100,7 @@ function JSmagic() {
 
     }
 }
+document.querySelector(".recordButton").addEventListener("click", JSmagic);
 
 function getTrackData(response) {
     return `
@@ -104,7 +108,7 @@ function getTrackData(response) {
     <div class="cards">
         <div class="card-item">
             <div class="card-image">
-                <img class="img-responsive" src="${response.track.images.coverart}">"
+                <img class="img-responsive" src="${response.track.images.coverart}">
             </div>
             <div class="card-info">
                 <div class="card-title">

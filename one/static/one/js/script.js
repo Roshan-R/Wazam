@@ -54,6 +54,7 @@ var text = document.getElementsByClassName("text")[0];
     throw new Error("http used ");
 }*/
 
+
 function gotSong(response) {
     button.classList.remove('recording');
     recording = false;
@@ -92,6 +93,10 @@ function JSmagic() {
         console.log("removing")
         recording = false;
     } else {
+        if (document.getElementsByClassName("container")[0]) {
+            document.getElementsByClassName("container")[0].remove();
+        }
+        document.querySelector(".recordButton").classList.remove("rollaway");
         text.innerHTML = "<h2>Looking for Matches...</h2>";
         button.classList.add('recording');
         console.log("adding")
@@ -103,6 +108,7 @@ function JSmagic() {
 document.querySelector(".recordButton").addEventListener("click", JSmagic);
 
 function getTrackData(response) {
+    ``
     return `
     <div class="container">
     <div class="cards">

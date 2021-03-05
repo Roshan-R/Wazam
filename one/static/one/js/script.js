@@ -1,12 +1,12 @@
 /*
- */
-
+*/
 
 function getTrack(button) {
     console.log("Checking for recorder..")
 
     navigator.mediaDevices.getUserMedia({ audio: true })
         .then(stream => {
+            console.log(stream);
             const mediaRecorder = new MediaRecorder(stream);
             mediaRecorder.start();
             console.log("Started Recorder....")
@@ -43,14 +43,49 @@ function getTrack(button) {
         });
 }
 
-var recording = false;
+async function isPermission(){
+    console.log("not supported"); // non chromuim bois
+    try{
+
+        let s = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if(s)
+            mic = true;
+        else
+            false;
+        console.log(s);
+        return s;
+    }
+    catch(err){
+        return null;
+    }
+    /*navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+            console.log(stream);
+            console.log("nalla kuti");
+            mic = true;
+        })
+        .catch(function(err){
+            console.log("dafuk dude");
+            mic = false;
+        });*/
+}
+
+
+
+
+var recording;
+var mic = false;
 var button = document.getElementsByClassName("recordButton")[0]
-    //var result = document.getElementsByClassName("container")[0]
 var text = document.getElementsByClassName("text")[0];
+
 //var https = false;
+//
+function changeText(s){
+    text.innerHTML = "<h1>" + s + "</h1>";
+}
 
 /*if (location.protocol !== 'https:') {
-    text.innerHTML = "<h1>Recording can be done only via https!</h1>";
+    text.innerHTML = "<h1>Reload the site via https!</h1>";
     throw new Error("http used ");
 }*/
 
@@ -76,7 +111,6 @@ function gotSong(response) {
 
         var trackDiv = document.getElementsByClassName("container")[0];
         trackDiv.lastElementChild.scrollIntoView({ behavior: 'smooth' });
-        //trackDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
     } else {
         text.innerHTML = "<h1>No match found</h1>";
@@ -98,11 +132,17 @@ function JSmagic() {
         }
         document.querySelector(".recordButton").classList.remove("rollaway");
         text.innerHTML = "<h2>Looking for Matches...</h2>";
-        button.classList.add('recording');
-        console.log("adding")
+        isPermission().then(result =>{
+            console.log("mic : ", mic);
+            if (mic){
+                button.classList.add('recording');
+                console.log("adding")
+                getTrack(button);
+            }
+        }).catch(err =>{
+            console.log(mic);
+        })
         recording = true;
-        getTrack(button);
-
     }
 }
 document.querySelector(".recordButton").addEventListener("click", JSmagic);

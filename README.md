@@ -1,9 +1,12 @@
-# BillyBatson
+# BillyBatson :musical_note:
 an (un)Official Shazam web client built using Django
 
-Thanks to https://github.com/marin-m/SongRec for providing python code required to communicate with Shazam servers
+[Check it out here!](https://billy-batson.herokuapp.com/)
 
-Uses JS to record microphone and django to send api requests.
+Huge thanks to https://github.com/marin-m/SongRec for providing 
+python code required to communicate with Shazam servers
+
+Uses JS to record microphone and django to send api requests
 
 
 ## Running Locally
@@ -21,3 +24,12 @@ python3 -m pip install -r requirements.txt --user
 `python3 manage.py runserver`
 
 ## Screenshots
+
+![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/wazam.png)
+![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/result.png)
+
+## Contributions
+
+Contributions are always welcome!
+
+Thanks to @GameGodS3 for rewriting my shitty frontend

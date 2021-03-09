@@ -26,7 +26,7 @@ python3 -m pip install -r requirements.txt --user
 ## Screenshots
 
 ![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/wazam.png)
-![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/result.png)
+![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/rresult.png)
 
 ## Contributions
 

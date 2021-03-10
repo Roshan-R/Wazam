@@ -26,7 +26,7 @@ additionally, `ffmpeg` and `ffprobe` should be installed in your system for proc
 ## Screenshots
 
 ![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/wazam.png)
-![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/rresult.png)
+![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/result.png)
 
 ## Todo
 - [x] Check whether mic permissions are given

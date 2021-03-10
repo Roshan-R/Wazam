@@ -98,7 +98,7 @@ function gotSong(response) {
 
     if (response.matches.length) {
         console.log("match found");
-        text.innerHTML = "<h1>Tap to Shazam!</h1>";
+        text.innerHTML = "<h1>Tap to Wazam!</h1>";
         console.log("Track title : " + response.track.title)
         console.log("Track artist : " + response.track.subtitle)
         console.log("Track coverart : " + response.track.images.coverart)
@@ -122,7 +122,7 @@ function gotSong(response) {
 function JSmagic() {
 
     if (recording) {
-        text.innerHTML = "<h1>Tap to Shazam!</h1>";
+        text.innerHTML = "<h1>Tap to Wazam!</h1>";
         button.classList.remove('recording');
         console.log("removing")
         recording = false;

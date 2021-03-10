@@ -6,8 +6,7 @@ an (un)Official Shazam web client built using Django
 Huge thanks to https://github.com/marin-m/SongRec for providing 
 python code required to communicate with Shazam servers
 
-Uses JS to record microphone and django to send api requests
-
+Wazam recognizes songs playing nearby you using your microphone and displays info about them.
 
 ## Running Locally
 
@@ -18,6 +17,7 @@ git clone https://github.com/Roshan-R/BillyBatson
 cd BillyBatson
 python3 -m pip install -r requirements.txt --user
 ```
+additionally, `ffmpeg` and `ffprobe` should be installed in your system for processing audio
 
 ### Running
 
@@ -27,6 +27,13 @@ python3 -m pip install -r requirements.txt --user
 
 ![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/wazam.png)
 ![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/rresult.png)
+
+## Todo
+- [x] Check whether mic permissions are given
+- [ ] Display Youtube and Spotify links to the track
+- [ ] Redo UI to support lyrics and show related tracks
+- [ ] Inform user if mic is not giving any input
+- [ ] Add an audio visualizer
 
 ## Contributions
 

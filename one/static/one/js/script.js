@@ -1,5 +1,37 @@
-/*
-*/
+let recording;
+let mic = false;
+let button = document.getElementsByClassName("recordButton")[0]
+let text = document.getElementsByClassName("text")[0];
+
+document.querySelector(".recordButton").addEventListener("click", JSmagic);
+
+function JSmagic() {
+
+    if (recording) {
+        text.innerHTML = "<h1>Tap to Wazam!</h1>";
+        button.classList.remove('recording');
+        console.log("removing")
+        recording = false;
+    } else {
+        if (document.getElementsByClassName("container")[0]) {
+            document.getElementsByClassName("container")[0].remove();
+        }
+        document.querySelector(".recordButton").classList.remove("rollaway");
+        text.innerHTML = "<h2>Looking for Matches...</h2>";
+        isPermission().then(result =>{
+            console.log("mic : ", mic);
+            if (mic){
+                button.classList.add('recording');
+                console.log("adding")
+                getTrack(button);
+            }
+        }).catch(err =>{
+            console.log(mic);
+        })
+        recording = true;
+    }
+}
+
 
 function getTrack(button) {
     console.log("Checking for recorder..")
@@ -58,32 +90,13 @@ async function isPermission(){
     catch(err){
         return null;
     }
-    /*navigator.mediaDevices.getUserMedia({ audio: true })
-        .then(stream => {
-            console.log(stream);
-            console.log("nalla kuti");
-            mic = true;
-        })
-        .catch(function(err){
-            console.log("dafuk dude");
-            mic = false;
-        });*/
 }
 
-
-
-
-var recording;
-var mic = false;
-var button = document.getElementsByClassName("recordButton")[0]
-var text = document.getElementsByClassName("text")[0];
-
-//var https = false;
-//
 function changeText(s){
     text.innerHTML = "<h1>" + s + "</h1>";
 }
 
+//var https = false;
 /*if (location.protocol !== 'https:') {
     text.innerHTML = "<h1>Reload the site via https!</h1>";
     throw new Error("http used ");
@@ -119,33 +132,6 @@ function gotSong(response) {
 
 }
 
-function JSmagic() {
-
-    if (recording) {
-        text.innerHTML = "<h1>Tap to Wazam!</h1>";
-        button.classList.remove('recording');
-        console.log("removing")
-        recording = false;
-    } else {
-        if (document.getElementsByClassName("container")[0]) {
-            document.getElementsByClassName("container")[0].remove();
-        }
-        document.querySelector(".recordButton").classList.remove("rollaway");
-        text.innerHTML = "<h2>Looking for Matches...</h2>";
-        isPermission().then(result =>{
-            console.log("mic : ", mic);
-            if (mic){
-                button.classList.add('recording');
-                console.log("adding")
-                getTrack(button);
-            }
-        }).catch(err =>{
-            console.log(mic);
-        })
-        recording = true;
-    }
-}
-document.querySelector(".recordButton").addEventListener("click", JSmagic);
 
 function getTrackData(response) {
     ``

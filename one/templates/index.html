@@ -14,26 +14,26 @@
 
 <body>
 
-    <div  class="flex h-screen bg-green-500">
-        <div id="begindiv" class="flex flex-col space-y-10 m-auto">
-            <div id="wazamButton" class="border-black rounded-full py-4 px-4 shadow-md transition-all">
-                <img src="https://wazam.herokuapp.com/static/one/css/shazam.png" width="160" height="160" />
+    <div class="flex flex-col h-screen bg-purple-700 group">
+        <div  class="m-auto">
+            <div id="circle-1" class="fixed w-64 h-64 -my-16 -mx-16 bg-gray-100 shadow-lg rounded-full opacity-50 hidden "></div>
+            <div id="circle-2" class="fixed w-32 h-32 bg-gray-300 rounded-full shadow-lg opacity-50 hidden"></div>
+
+            <div id="record-button" class="object-center border-black rounded-full">
+                <img src="{% static 'one/css/shazam.png' %}" width="130" height="130" />
             </div>
-            <!-- <div id="text" class="text-center text-white font text-2xl">
-                Press to search
-            </div> -->
+            <div id="text" class="fixed inset-y-3/4 -ml-5 text-center text-white font text-2xl">Tap to Wazam</div>
         </div>
-    </div>
-    <!-- <div class="flex h-screen bg-green-500">
-        <div class="space-y-10 m-auto bg-white rounded-2xl">
+
+        <div id="info-card"
+            class="fixed top-full place-self-center space-y-10 bg-white rounded-2xl transition-all duration-700">
             <div class="flex flex-col md:flex-row">
-                <img class="rounded-2xl my-5 mx-5"
-                    src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b6/f6/9c/b6f69c58-18af-7343-13b2-0d3c4dc16605/195497412600.jpg/400x400cc.jpg"
-                    width="200" />
+                <img id="info-image" class="rounded-2xl my-5 mx-5"
+                    src="https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_After_Hours.png" width="200" />
                 <div class="flex flex-col md:mr-10 ml-5 mb-5 justify-center">
                     <div class="flex flex-col pt-2 md:pt-11">
-                        <span class="font-bold text-3xl md:text-4xl">Reason</span>
-                        <span class="font-light text-base md:text-base">Jordana</span>
+                        <span id="info-title" class="font-bold text-3xl md:text-4xl">After Hours</span>
+                        <span id="info-artist" class="font-light text-base md:text-base">The Weeknd</span>
                     </div>
                     <div class="flex flex-row space-x-3 pt-2 md:pt-8">
                         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
 </body>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->

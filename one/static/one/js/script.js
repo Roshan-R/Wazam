@@ -13,8 +13,11 @@ function JSmagic() {
         recording = false;
     } else {
 
-        //text.innerHTML = "<h2>Looking for Matches...</h2>";
 
+        //text.innerHTML = "<h2>Looking for Matches...</h2>";
+        if (document.getElementById("trackdiv")) {
+            document.getElementById("trackdiv").remove();
+        }
         isPermission().then(result => {
             console.log("mic : ", mic);
             if (mic) {
@@ -68,25 +71,35 @@ function getTrack(button) {
                 const audioBlob = new Blob(audioChunks);
                 const audioUrl = URL.createObjectURL(audioBlob);
                 const audio = new Audio(audioUrl);
-                const url = "http://localhost:8000/api";
+                const url = "api";
 
                 console.log("sending api request to django")
                 var fd = new FormData();
                 fd.append("audio_data", audioBlob, "rhiss");
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    data: fd,
+
+                fetch(url, {
+                    method: 'POST',
+                    body: fd,
+                    mode: 'cors',
                     processData: false,
                     contentType: false,
-                    success: gotSong,
-                    //etc
-                });
+                }).then(data => {
+                    data.json().then(
+                        json=>{
+                            console.log(data);
+                            gotSong(json);
+                        }
+                    )
+                    
+                }
+
+                )
+
             });
 
             setTimeout(() => {
                 mediaRecorder.stop();
-            }, 4000);
+            }, 3000);
         });
 }
 
@@ -133,31 +146,7 @@ function gotSong(response) {
 
 }
 
-// function getTrackData(response) {
-//     ``
-//     return `
-//     <div class="container">
-//     <div class="cards">
-//         <div class="card-item">
-//             <div class="card-image">
-//                 <img class="img-responsive" src="${response.track.images.coverart}">
-//             </div>
-//             <div class="card-info">
-//                 <div class="card-title">
-//                     <h2>${response.track.title}</h2>
-//                 </div>
-//                 <div class="card-subtitle">
-//                     <h3>${response.track.subtitle}
-//                         <h3/>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-//     `
-// }
-
-function getTrackData(response){
+function getTrackData(response) {
     ``
     return `
     <div id="trackdiv" class="space-y-10 m-auto bg-white rounded-2xl">

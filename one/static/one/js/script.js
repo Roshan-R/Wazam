@@ -11,6 +11,7 @@ let infoTitle = document.getElementById("info-title")
 let infoArtist = document.getElementById("info-artist")
 let infoImage = document.getElementById("info-image")
 
+let placeholderImage = document.getElementById("placeholder-image")
 
 button.addEventListener("click", JSmagic);
 
@@ -166,10 +167,13 @@ function gotSong(response) {
         console.log("Track artist : " + response.track.subtitle)
         console.log("Track coverart : " + response.track.images.coverart)
 
-        
+        placeholderImage.classList.add("hidden");
+
         infoTitle.innerHTML = response.track.title;
         infoArtist.innerHTML = response.track.subtitle;
+
         infoImage.src = response.track.images.coverart;
+        infoImage.classList.remove("hidden");
 
         infoCard.classList.remove("top-full");
         infoCard.classList.add("top-1/3");

@@ -27,13 +27,14 @@ SECRET_KEY = '4hlt16dq_bkx=rz_8*aii9y4b@!x-hk-x8v_wxolj&f4i2q&9v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","billy-batson.herokuapp.com", "0.0.0.0", "2829321cd71d.ngrok.io"]
+ALLOWED_HOSTS = ["127.0.0.1","billy-batson.herokuapp.com", "192.168.1.4", "2829321cd71d.ngrok.io"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'one.apps.OneConfig',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

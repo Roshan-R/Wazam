@@ -7,29 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="{% static 'one/css/style.css' %}" type="text/css"> -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{% static 'one/css/tailwind/tailwind.css' %}" rel="stylesheet">
 
     <title>Wazam!</title>
 </head>
 
 <body>
-
-    <div class="flex flex-col h-screen bg-purple-700 group">
-        <div  class="m-auto">
-            <div id="circle-1" class="fixed w-64 h-64 -my-16 -mx-16 bg-gray-100 shadow-lg rounded-full opacity-50 hidden "></div>
-            <div id="circle-2" class="fixed w-32 h-32 bg-gray-300 rounded-full shadow-lg opacity-50 hidden"></div>
-
-            <div id="record-button" class="object-center border-black rounded-full">
-                <img src="{% static 'one/css/shazam.png' %}" width="130" height="130" />
+    <div class="flex flex-col h-screen bg-gray-black">
+        <div class="m-auto">
+            <div id="record-button"
+                class="hover:bg-red-500 duration-400 object-center bg-red-1 border-red-2 border-b-8 rounded-full w-40 h-40 md:w-52 md:h-52 transition-all">
             </div>
-            <div id="text" class="fixed inset-y-3/4 -ml-5 text-center text-white font text-2xl">Tap to Wazam</div>
+            <div id="text" class="fixed inset-y-3/4 md:ml-4 ml-1 text-center text-white font-bold text-xl md:text-2xl">
+                Press to search
+            </div>
         </div>
 
-        <div id="info-card"
-            class="fixed top-full place-self-center space-y-10 bg-white rounded-2xl transition-all duration-700">
+        <div id="info-card" class="fixed top-full place-self-center space-y-10 bg-white rounded-2xl transition-all duration-500">
             <div class="flex flex-col md:flex-row">
-                <img id="info-image" class="rounded-2xl my-5 mx-5 hidden" src="https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_After_Hours.png" width="200" />
-                <div id="placeholder-image" class="bg-gray-200 animate-pulse w-52 h-52 my-5 mx-5 rounded-2xl"></div>          
+                <img id="info-image" class="rounded-2xl my-5 mx-5 hidden"
+                    src="" width="200" />
+                    <div id="placeholder-image" class="bg-gray-200 animate-pulse w-52 h-52 my-5 mx-5 rounded-2xl"></div>          
+ 
                 <div class="flex flex-col md:mr-10 ml-5 mb-5 justify-center">
                     <div class="flex flex-col pt-2 md:pt-11">
                         <span id="info-title" class="font-bold text-3xl md:text-4xl">After Hours</span>
@@ -50,8 +49,15 @@
                 </div>
             </div>
         </div>
+        <button id="retry-button"
+            class="fixed inline-flex items-center top-full place-self-center m-20 justify-center px-4 text-2xl rounded-md border-opacity-60 text-center border-white border-2 text-white transition-all duration-700 ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            Retry
     </div>
-
 </body>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <script src="{% static 'one/js/script.js' %}" type="text/javascript"></script>

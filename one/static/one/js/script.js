@@ -2,8 +2,8 @@ let recording = false;
 let hasMic;
 
 let button = document.getElementById("record-button")
-let circle1 = document.getElementById("circle-1")
-let circle2 = document.getElementById("circle-2")
+let retryButton = document.getElementById("retry-button")
+
 let text = document.getElementById("text");
 
 let infoCard = document.getElementById("info-card")
@@ -14,20 +14,15 @@ let infoImage = document.getElementById("info-image")
 let placeholderImage = document.getElementById("placeholder-image")
 
 button.addEventListener("click", JSmagic);
+retryButton.addEventListener("click", retry);
 
 function removeAnimation() {
 
     console.log("removing animation")
     // remove animation
+    button.classList.add('bg-red-1');
     button.classList.remove('animate-spin');
-
-    circle1.classList.add('hidden');
-    circle1.classList.remove('visible');
-    circle1.classList.remove('animate-ping');
-
-    circle2.classList.add('hidden');
-    circle2.classList.remove('visible');
-    circle2.classList.remove('animate-ping');
+    button.classList.remove('bg-red-500');
 
 }
 
@@ -35,19 +30,11 @@ function addAnimation() {
 
     // add animation
     console.log("adding animation")
-
-
+    button.classList.remove('bg-red-1');
     button.classList.add('animate-spin');
-
-    circle1.classList.remove('hidden');
-    circle1.classList.add('visible');
-    circle1.classList.add('animate-ping');
-
-
-    circle2.classList.remove('hidden');
-    circle2.classList.add('visible');
-    circle2.classList.add('animate-ping');
-
+    button.classList.add('bg-red-500');
+    changeText("Press to search");
+    changeText("...Searching...");
 }
 
 
@@ -178,10 +165,31 @@ function gotSong(response) {
         infoCard.classList.remove("top-full");
         infoCard.classList.add("top-1/3");
 
+        retryButton.classList.remove("top-full");
+        retryButton.classList.add("top-2/3");
+
+        button.classList.add("opacity-0")
+
     } else {
         changeText("No match found");
         button.classList.remove('animate-spin');
     }
     removeAnimation();
 
+}
+
+function retry(){
+    infoCard.classList.remove("top-1/3");
+    infoCard.classList.add("top-full");
+
+    retryButton.classList.remove("top-2/3");
+    retryButton.classList.add("top-full");
+
+    button.classList.remove("opacity-0");
+    text.classList.remove('hidden');
+
+    addAnimation();
+    JSmagic();
+
+    console.log("Called retry");
 }

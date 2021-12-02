@@ -166,7 +166,9 @@ function gotSong(response) {
         infoCard.classList.add("top-1/3");
 
         retryButton.classList.remove("top-full");
-        retryButton.classList.add("top-2/3");
+        retryButton.classList.add("bottom-0");
+        retryButton.classList.add("md:top-2/3");
+        retryButton.classList.add("md:bottom-auto");
 
         button.classList.add("opacity-0")
 
@@ -179,11 +181,18 @@ function gotSong(response) {
 }
 
 function retry(){
+
+    infoImage.src = "";
+
+
     infoCard.classList.remove("top-1/3");
     infoCard.classList.add("top-full");
 
-    retryButton.classList.remove("top-2/3");
     retryButton.classList.add("top-full");
+    retryButton.classList.remove("bottom-0");
+    retryButton.classList.remove("md:top-2/3");
+    retryButton.classList.remove("md:bottom-auto");
+
 
     button.classList.remove("opacity-0");
     text.classList.remove('hidden');

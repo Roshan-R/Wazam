@@ -2,6 +2,7 @@
 an (un)Official Shazam web client built using Django
 
 [Check it out here!](https://wazam.herokuapp.com/)
+
 [Alternate instance](https://wazam.ml)
 
 Huge thanks to https://github.com/marin-m/SongRec for providing 

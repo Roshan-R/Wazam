@@ -28,11 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1","billy-batson.herokuapp.com", "0.0.0.0", "BillyBatson.roshanr3.repl.co", "93f3a3e9-e861-44d1-aa9e-ba5e945df2ab.id.repl.co", "wazam.ml"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
     'one.apps.OneConfig',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -27,18 +27,16 @@ additionally, `ffmpeg` and `ffprobe` should be installed in your system for proc
 
 ## Screenshots
 
-![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/main.png)
-![](https://raw.githubusercontent.com/Roshan-R/BillyBatson/main/imgs/result.png)
+![1](https://user-images.githubusercontent.com/43182697/151839673-03f3e51c-64b7-47eb-88ee-e563b1133810.png)
+![2](https://user-images.githubusercontent.com/43182697/151839681-3dc2fcce-673e-45b1-80fd-ac442606cf3d.png)
 
 ## Todo
 - [x] Check whether mic permissions are given
 - [ ] Display Youtube and Spotify links to the track
-- [ ] Redo UI to support lyrics and show related tracks
+- [ ] Add support for lyrics and show related tracks
 - [ ] Inform user if mic is not giving any input
 - [ ] Add an audio visualizer
 
 ## Contributions
 
 Contributions are always welcome!
-
-Thanks to @GameGodS3 for rewriting my shitty frontend

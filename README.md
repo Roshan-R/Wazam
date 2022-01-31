@@ -1,9 +1,9 @@
 # BillyBatson :musical_note:
 an (un)Official Shazam web client built using Django
 
-[Check it out here!](https://wazam.herokuapp.com/)
+[Check it out here!](https://wazam.ml)
 
-[Alternate instance](https://wazam.ml)
+[Alternate instance](https://wazam.herokuapp.com/)
 
 Huge thanks to https://github.com/marin-m/SongRec for providing 
 python code required to communicate with Shazam servers

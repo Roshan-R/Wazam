@@ -1,4 +1,4 @@
-# BillyBatson :musical_note:
+# Wazam :musical_note:
 an (un)Official Shazam web client built using Django
 
 [Check it out here!](https://wazam.ml)
@@ -15,8 +15,8 @@ Wazam recognizes songs playing nearby you using your microphone and displays inf
 ### Installing Dependencies
 
 ```bash
-git clone https://github.com/Roshan-R/BillyBatson
-cd BillyBatson
+git clone https://github.com/Roshan-R/Wazam
+cd Wazam
 python3 -m pip install -r requirements.txt --user
 ```
 additionally, `ffmpeg` and `ffprobe` should be installed in your system for processing audio
